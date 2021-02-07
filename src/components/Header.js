@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {NavLink} from "react-router-dom";
 import {
     Collapse,
     Navbar,
@@ -6,7 +7,6 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
 } from "reactstrap";
 
 const Header = (props) => {
@@ -18,14 +18,16 @@ const Header = (props) => {
         <div>
             <React.Fragment>
                 <Navbar light expand="md">
-                    <NavbarBrand href="/">Recipe House</NavbarBrand>
+                    <NavbarBrand>Recipe House</NavbarBrand>
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
                         <Nav className="mr-auto" navbar>
                             <NavItem>
-                                <NavLink href="/">Home</NavLink>
+                                <NavLink className="nav-link" to="/">Home</NavLink>
                             </NavItem>
-                           
+                            <NavItem>
+                                <NavLink className="nav-link" to="/addRecipe">Add Recipe</NavLink>
+                            </NavItem>
                         </Nav>
                         
                     </Collapse>

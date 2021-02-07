@@ -1,7 +1,9 @@
 import React from 'react'
-import { Toast, ToastBody, ToastHeader } from 'reactstrap';
+import { Link } from 'react-router-dom'
+// import { Toast, ToastBody, ToastHeader } from 'reactstrap';
 
 const Meal = ({ meal: {
+    idMeal,
     strMealThumb,
     strMeal,
     strInstructions,
@@ -32,7 +34,14 @@ const Meal = ({ meal: {
                         </ul>
                     </div>
                 </div>
-                <button className="btn btn-warning" id="showRecipeBtn">Show Recipe</button>
+                <Link to={
+                    {
+                        pathname: '/showRecipe',
+                        state: { idMeal }
+                    }
+                }>
+                    <button className="btn btn-warning" id="showRecipeBtn">Show Recipe</button>
+                </Link>
             </div>
         </div>
     );
